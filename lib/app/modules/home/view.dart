@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:task_app/app/core/utils/extentions.dart';
 import 'package:task_app/app/modules/home/controller.dart';
 import 'package:task_app/app/modules/home/widgets/add_card.dart';
+import 'package:task_app/app/modules/home/widgets/task_card.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -23,13 +24,18 @@ class HomePage extends GetView<HomeController> {
                 ),
               ),
             ),
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              physics: const ClampingScrollPhysics(),
-              children: [
-                AddCard(),
-              ],
+            Obx(
+              () => GridView.count(
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                children: [
+                  ...controller.tasks
+                      .map((element) => TaskCard(task: element))
+                      .toList(),
+                  AddCard(),
+                ],
+              ),
             )
           ],
         ),
