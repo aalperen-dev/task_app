@@ -3,6 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:task_app/app/core/utils/extentions.dart';
+import 'package:task_app/app/modules/detail/widgets/doing_list.dart';
 import 'package:task_app/app/modules/home/controller.dart';
 
 class DetailPage extends StatelessWidget {
@@ -150,6 +151,7 @@ class DetailPage extends StatelessWidget {
                 },
               ),
             ),
+            DoingList(),
           ],
         ),
       ),
