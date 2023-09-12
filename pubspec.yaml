@@ -25,5 +25,4 @@ flutter:
   assets:
     - assets/
     - assets/images/
-    - assets/board.jpg
   uses-material-design: true

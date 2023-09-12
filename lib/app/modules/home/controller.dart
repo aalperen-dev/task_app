@@ -128,4 +128,22 @@ class HomeController extends GetxController {
     tasks[oldIndex] = newTask;
     tasks.refresh();
   }
+
+  void doneTodo(String title) {
+    var doingTodo = {
+      'title': title,
+      'done': false,
+    };
+    int index = doingTodos.indexWhere(
+        (element) => mapEquals<String, dynamic>(doingTodo, element));
+
+    doingTodos.removeAt(index);
+    var doneTodo = {
+      'title': title,
+      'done': true,
+    };
+    doneTodos.add(doneTodo);
+    doingTodos.refresh();
+    doneTodos.refresh();
+  }
 }
