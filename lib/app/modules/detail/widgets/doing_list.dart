@@ -4,13 +4,14 @@ import 'package:task_app/app/core/utils/extentions.dart';
 import 'package:task_app/app/modules/home/controller.dart';
 
 class DoingList extends StatelessWidget {
-  final homeCtrl = Get.find<HomeController>();
   DoingList({super.key});
+
+  final homeCtrl = Get.find<HomeController>();
 
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => homeCtrl.doingTodos.isEmpty && homeCtrl.doingTodos.isEmpty
+      () => homeCtrl.doingTodos.isEmpty && homeCtrl.doneTodos.isEmpty
           ? Column(
               children: [
                 Image.asset(
